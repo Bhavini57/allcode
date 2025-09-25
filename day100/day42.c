@@ -11,3 +11,4 @@ int main ()
 
     return 0;
 }
+//sum of 1st n natural no
