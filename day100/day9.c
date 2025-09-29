@@ -1,6 +1,6 @@
 //<math.> for sqrt
 #include <stdio.h>
-#include <math.h>   // for sqrt()
+#include <math.h>  
 
 int main() 
 {
