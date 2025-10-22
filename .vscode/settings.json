@@ -2,6 +2,7 @@
     "C_Cpp.errorSquiggles": "disabled",
     "files.associations": {
         "TakeClass": "java",
-        "STRCLS.C": "cpp"
+        "STRCLS.C": "cpp",
+        "DAY16.C": "cpp"
     }
 }
