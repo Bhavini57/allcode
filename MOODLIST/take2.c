@@ -341,10 +341,22 @@ void showWeeklyReport()
     int max = happy;
     char most[20] = "Happy";
 
-    if (sad > max) { max = sad; strcpy(most, "Sad"); }
-    if (romantic > max) { max = romantic; strcpy(most, "Romantic"); }
-    if (energetic > max) { max = energetic; strcpy(most, "Energetic"); }
-    if (chill > max) { max = chill; strcpy(most, "Chill"); }
+    if (sad > max) 
+    { 
+        max = sad; strcpy(most, "Sad"); 
+    }
+    if (romantic > max) 
+    {
+        max = romantic; strcpy(most, "Romantic");
+    }
+    if (energetic > max) 
+    {  
+        max = energetic; strcpy(most, "Energetic"); 
+    }
+    if (chill > max) 
+    { 
+        max = chill; strcpy(most, "Chill"); 
+    }
 
     printf("\nMost selected mood: %s\n\n", most);
 }

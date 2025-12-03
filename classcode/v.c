@@ -1,7 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-struct student {
+struct student 
+{
     char name[50];
     int *marks;
     int sub;
@@ -27,20 +28,23 @@ int main()
 
         s.marks = (int*) malloc(s.sub * sizeof(int));
 
-        if (s.marks == NULL) {
+        if (s.marks == NULL) 
+        {
             printf("Memory not allocated\n");
             return 0;
         }
 
         printf("Enter marks for %d subjects:\n", s.sub);
-        for (int i = 0; i < s.sub; i++) {
+        for (int i = 0; i < s.sub; i++) 
+        {
             scanf("%d", &s.marks[i]);
         }
 
         float sum = 0;
         float highest = s.marks[0];
 
-        for (int i = 0; i < s.sub; i++) {
+        for (int i = 0; i < s.sub; i++) 
+        {
             sum += s.marks[i];
             if (s.marks[i] > highest) {
                 highest = s.marks[i];
