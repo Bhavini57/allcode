@@ -1,59 +1,97 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
 
-struct student {
+struct student 
+{
     char name[50];
     int *marks;
     int sub;
 };
 
-int main() 
-{
+int main() {
     struct student s;
+    int choice = 0;
+    int again = 1;
 
-    printf("Enter student name: ");
-    scanf("%s", s.name);
+    while (again == 1) {
 
-    printf("Enter number of subjects: ");
-    scanf("%d", &s.sub);  
+        printf("\nenter student name: ");
+        scanf("%s", s.name);
 
-    s.marks = (int*) malloc(s.sub * sizeof(int));
+        printf("enter number of subjects: ");
+        scanf("%d", &s.sub);
 
-    if (s.marks == NULL) 
-    {
-        printf("Memory not allocated\n");
-        return 0;
-    }
-
-    printf("Enter marks for %d subjects:\n", s.sub);
-    for (int i = 0; i < s.sub; i++)
-    {
-        scanf("%d", &s.marks[i]);
-    }
-
-    float sum = 0;
-    float highest = s.marks[0];
-
-    for (int i = 0; i < s.sub; i++)
-    {
-        sum += s.marks[i];
-
-        if (s.marks[i] > highest) {
-            highest = s.marks[i];
+        while (s.sub <= 0) 
+        {
+            printf("invalid. enter number of subjects again: ");
+            scanf("%d", &s.sub);
         }
+
+        s.marks = (int*) malloc(s.sub * sizeof(int));
+        if (s.marks == NULL) 
+        {
+            printf("memory does not allocated!\n");
+            return 0;
+        }
+
+        printf("enter marks for %d subjects:\n", s.sub);
+        for (int i = 0; i < s.sub; i++) {
+            scanf("%d", &s.marks[i]);
+        }
+
+        float sum = 0, highest = s.marks[0];
+        for (int i = 0; i < s.sub; i++) {
+            sum += s.marks[i];
+            if (s.marks[i] > highest)
+                highest = s.marks[i];
+        }
+        float percentage = sum / s.sub;
+
+        do {
+            printf("\nMenu :\n");
+            printf("1. show total marks\n");
+            printf("2. show highest marks\n");
+            printf("3. show percentage\n");
+            printf("4. enter another student\n");
+            printf("0. exit program\n");
+            printf("enter your choice: ");
+            scanf("%d", &choice);
+
+            switch (choice) {
+
+                case 1:
+                    printf("total marks: %.2f\n", sum);
+                    break;
+
+                case 2:
+                    printf("highest marks: %.2f\n", highest);
+                    break;
+
+                case 3:
+                    printf("percentage: %.2f%%\n", percentage);
+                    break;
+
+                case 4:
+                    again = 1;   
+                    break;
+
+                case 0:
+                    again = 0;   
+                    break;
+
+                default:
+                    printf("invalid choice... Try again\n");
+            }
+
+            if (choice == 4 || choice == 0)
+                break;
+
+        } while (choice != 0);
+
+        free(s.marks);
+        printf("\n----------------------------------------\n");
     }
 
-    float percentage = (sum / s.sub ) * 100;  
-    
-
-    printf("\nStudent Score Sheet\n");
-    printf("Name: %s\n", s.name);
-    printf("Total Marks: %.2f\n", sum);
-    printf("Highest Marks: %.2f\n", highest);
-    printf("Percentage: %.2f%%\n", percentage);
-
-    free(s.marks);
-
+    printf("Thank you, bye.\n");
     return 0;
 }

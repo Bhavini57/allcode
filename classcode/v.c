@@ -15,14 +15,15 @@ int main()
 
     while (choice == 1) 
     {
-        printf("Enter student name: ");
+        printf("enter student name: ");
         scanf("%s", s.name);
 
-        printf("Enter number of subjects: ");
+        printf("enter number of subjects: ");
         scanf("%d", &s.sub);
 
-        while (s.sub <= 0) {
-            printf("Invalid! Enter number of subjects again: ");
+        while (s.sub <= 0) 
+        {
+            printf("invalid\n enter number of subjects again: ");
             scanf("%d", &s.sub);
         }
 
@@ -30,11 +31,11 @@ int main()
 
         if (s.marks == NULL) 
         {
-            printf("Memory not allocated\n");
+            printf("memory does not allocated\n");
             return 0;
         }
 
-        printf("Enter marks for %d subjects:\n", s.sub);
+        printf("mnter marks for %d subjects:\n", s.sub);
         for (int i = 0; i < s.sub; i++) 
         {
             scanf("%d", &s.marks[i]);
@@ -46,23 +47,24 @@ int main()
         for (int i = 0; i < s.sub; i++) 
         {
             sum += s.marks[i];
-            if (s.marks[i] > highest) {
+            if (s.marks[i] > highest) 
+            {
                 highest = s.marks[i];
             }
         }
 
         float percentage = sum / s.sub;
 
-        printf("\nStudent Score Sheet\n");
-        printf("Name: %s\n", s.name);
-        printf("Total Marks: %.2f\n", sum);
-        printf("Highest Marks: %.2f\n", highest);
-        printf("Percentage: %.2f\n", percentage);
+        printf("\nstudent Score Sheet\n");
+        printf("name: %s\n", s.name);
+        printf("total Marks: %.2f\n", sum);
+        printf("highest Marks: %.2f\n", highest);
+        printf("percentage: %.2f\n", percentage);
 
         free(s.marks);
 
-        printf("\nDo you want to add another student?\n");
-        printf("Press 1 for YES, 0 for EXIT: ");
+        printf("\ndo you want to add another student?\n");
+        printf("press 1 for YES, 0 for EXIT: ");
         scanf("%d", &choice);
 
         printf("\n----------------------------------------\n");

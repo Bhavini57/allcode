@@ -19,8 +19,7 @@ int main()
     {
         scanf("%d", &arr[i]);
     }
-    //--------part 1 asked-------
-    //--------part 2--------
+
     int sum = 0;
     for (i = 0; i < n; i++)
     {
