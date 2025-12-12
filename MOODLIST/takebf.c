@@ -50,7 +50,12 @@ void happy()
     printf("2. Spotify\n");
     printf("3. Go Back\n");
     printf("Enter your choice: ");
-    if (scanf("%d", &choice) != 1) { fflush(stdin); return; }
+    if (scanf("%d", &choice) != 1) 
+    {
+     printf("Invalid input!\n");
+     scanf("%*s");   
+     return;
+    }
 
     if (choice == 1) { 
         char cmd[512];
@@ -107,7 +112,12 @@ void sad()
     printf("2. Spotify\n");
     printf("3. Go Back\n");
     printf("Enter your choice: ");
-    if (scanf("%d", &choice) != 1) { fflush(stdin); return; }
+    if (scanf("%d", &choice) != 1) 
+    {
+     printf("Invalid input!\n");
+     scanf("%*s");   
+     return;
+    }
 
     if (choice == 1) {
         char cmd[512];
@@ -164,7 +174,12 @@ void romantic()
     printf("2. Spotify\n");
     printf("3. Go Back\n");
     printf("Enter your choice: ");
-    if (scanf("%d", &choice) != 1) { fflush(stdin); return; }
+    if (scanf("%d", &choice) != 1) 
+    {
+     printf("Invalid input!\n");
+     scanf("%*s");   
+     return;
+    }
 
     if (choice == 1) {
         char cmd[512];
@@ -221,7 +236,12 @@ void chill()
     printf("2. Spotify\n");
     printf("3. Go Back\n");
     printf("Enter your choice: ");
-    if (scanf("%d", &choice) != 1) { fflush(stdin); return; }
+    if (scanf("%d", &choice) != 1) 
+    {
+     printf("Invalid input!\n");
+     scanf("%*s");   
+     return;
+    }
 
     if (choice == 1) {
         char cmd[512];

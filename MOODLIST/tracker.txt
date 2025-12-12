@@ -19,3 +19,7 @@ Energetic
 Happy
 Sad
 Energetic
+Chill
+Happy
+Romantic
+Sad
